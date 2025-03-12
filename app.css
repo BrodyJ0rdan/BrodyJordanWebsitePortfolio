@@ -1,0 +1,276 @@
+/* Custom Vertical Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Prevent Horizontal Overflow */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Professional Navy Blue Background */
+body {
+    background-color: #001f3f; /* Navy blue */
+    color: #ffffff; /* White text for contrast */
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Default font size */
+}
+
+/* Section Styles */
+section {
+    box-sizing: border-box;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    padding: 0 40px; /* Add horizontal padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Intro Section Styles */
+#intro {
+    display: flex;
+    flex-direction: row; /* Ensure left and right are side by side */
+    justify-content: space-between; /* Space out left and right sides */
+    align-items: center; /* Vertically center content */
+}
+
+/* Left Side Styles */
+.left-side {
+    flex: 1; /* Take up available space */
+    text-align: left; /* Align text to the left */
+    padding-left: 20%; /* Move text further to the right */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    height: 100%; /* Take up full height */
+}
+
+.left-side .subtitle {
+    font-size: 2rem; /* Increased font size */
+    color: rgba(173, 216, 230, 0.8); /* Light blue with transparency */
+    margin: 0; /* Remove default margin */
+}
+
+.left-side .name {
+    font-size: 5rem; /* Increased font size */
+    font-weight: bold; /* Bold text */
+    color: #ffffff; /* White text */
+    margin: 10px 0 0 0; /* Add some spacing */
+}
+
+/* Right Side Styles */
+.right-side {
+    flex: 1; /* Take up available space */
+    max-width: 50%; /* Limit width of the intro text */
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    height: 100%; /* Take up full height */
+    padding-right: 5%; /* Move text further to the left */
+}
+
+.right-side .intro-text {
+    font-size: 1.8rem; /* Increased font size */
+    line-height: 1.6; /* Improve readability */
+    color: #a2d5f2; /* Pastel blue */
+}
+
+/* Navigation Bar Styles */
+#navbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    padding: 15px 30px; /* Increased padding */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#navbar ul li {
+    display: inline;
+}
+
+#navbar ul li a {
+    font-size: 1.2rem; /* Increased font size */
+    text-decoration: none;
+    color: #87cefa; /* Sky blue */
+    font-weight: normal;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+#navbar ul li a.active {
+    font-weight: bold;
+    color: #87cefa; /* Sky blue for active link */
+}
+
+#navbar ul li a:not(.active) {
+    opacity: 0.7; /* Faded text for inactive links */
+}
+
+/* Hover Effects */
+#navbar ul li a:hover {
+    opacity: 1;
+    color: #87cefa; /* Sky blue on hover */
+}
+
+/* About Me Section Styles */
+#about {
+    display: flex;
+    flex-direction: row; /* Ensure left and right are side by side */
+    justify-content: space-between; /* Space out left and right sides */
+    align-items: center; /* Vertically center content */
+    height: 100vh; /* Full viewport height */
+    padding: 0 40px; /* Add horizontal padding */
+}
+
+/* Left Side Styles */
+.left-side h2 {
+    font-size: 4rem; /* Larger font size */
+    color: #ffffff; /* White text */
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+.hobbies-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.hobbies-list li {
+    font-size: 2rem; /* Increased font size */
+    color: #87cefa; /* Sky blue text */
+    margin: 10px 0; /* Add spacing between list items */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: color 0.3s;
+}
+
+.hobbies-list li:hover {
+    color: #ffffff; /* White text on hover */
+}
+
+/* Right Side Styles */
+.right-side {
+    flex: 1; /* Take up available space */
+    max-width: 50%; /* Limit width of the hover text */
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    height: 100%; /* Take up full height */
+    padding-right: 5%; /* Move text further to the left */
+    position: relative; /* Add this for positioning */
+}
+
+.hover-text {
+    font-size: 1.8rem; /* Increased font size */
+    line-height: 1.6; /* Improve readability */
+    color: #a2d5f2; /* Pastel blue */
+    display: none; /* Hide text by default */
+    position: absolute; /* Position the text absolutely */
+    top: 50%; /* Center vertically */
+    left: 0; /* Align to the left */
+    transform: translateY(-50%); /* Adjust vertical centering */
+    background: rgba(0, 0, 0, 0.8); /* Add background for better visibility */
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font size for tablets */
+    }
+
+    #intro {
+        flex-direction: column; /* Stack left and right sides vertically */
+        padding: 0 20px; /* Reduce padding for smaller screens */
+    }
+
+    .left-side, .right-side {
+        padding-left: 0; /* Remove left padding */
+        max-width: 100%; /* Full width on smaller screens */
+        text-align: center; /* Center-align text */
+    }
+
+    .left-side .subtitle {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .left-side .name {
+        font-size: 3rem; /* Smaller font size */
+    }
+
+    .right-side .intro-text {
+        font-size: 1.2rem; /* Smaller font size */
+    }
+
+    #navbar {
+        padding: 10px 20px; /* Reduce padding for smaller screens */
+    }
+
+    #navbar ul {
+        flex-direction: column; /* Stack navbar links vertically */
+        gap: 10px;
+    }
+
+    #navbar ul li a {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    #about {
+        flex-direction: column; /* Stack left and right sides vertically */
+    }
+
+    .hobbies-list li {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .hover-text {
+        font-size: 1.2rem; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Smaller font size for mobile phones */
+    }
+
+    .left-side .name {
+        font-size: 2.5rem; /* Smaller font size */
+    }
+
+    .right-side .intro-text {
+        font-size: 1rem; /* Smaller font size */
+    }
+}
